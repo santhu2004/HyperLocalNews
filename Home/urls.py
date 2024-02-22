@@ -7,9 +7,10 @@ urlpatterns = [
     path('CitizenReport', views.CitizenReport, name="Citizen"),
     path('Anekal',views.Anekal, name = 'Anekal'),
     path('Banashankari',views.Banashankari, name = 'Banashankari'),
-    path('Yelahanka',views.Yelahanka, name = 'Yelahanka'),
+    #path('Yelahanka',views.Yelahanka, name = 'Yelahanka'),
     path('db',views.data, name = 'database'),
-    
+    path('CitizenInput',views.CitizenInput, name = 'input_pg'),
+    path('Contact_Us',views.Contact_Us, name = 'Contact_Us'),
 
     # path('', views.about, name="about"),
     # path('contact', views.contact, name="contact"),

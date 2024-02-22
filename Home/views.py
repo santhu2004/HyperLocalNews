@@ -6,10 +6,6 @@ from Home.headings import scrape_news
 from Home.content import scrape_locations
 import random
 # from .models import Report
-
-def Yelahanka(request):
-    return render(request, 'Yelahanka.html')
-
 def Anekal(request):
     
     url_to_scrape = "https://timesofindia.indiatimes.com/topic/anekal"
@@ -56,6 +52,15 @@ def home(request):
 def data(request):
     items = Report.objects.all()
     return render(request, 'database.html',{'data' : items})
+
+def CitizenInput(request):
+    items = Report.objects.all()
+    return render(request, 'CitizenInput.html')
+
+
+def Contact_Us(request):
+    items = Report.objects.all()
+    return render(request, 'Contact_Us.html')
 
 def CitizenReport(request):
     if(request.method == 'POST'):
