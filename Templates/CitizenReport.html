@@ -155,7 +155,8 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <form action="" class="mb-4">
+                            <form action="" method="post" class="mb-4">
+                                {$ csrf_token $}
                                 <div class="row g-4">
                                     <div class="col-lg-6">
                                         <input type="text" class="w-100 form-control border-0 py-3" name="name" placeholder="Your Name">
