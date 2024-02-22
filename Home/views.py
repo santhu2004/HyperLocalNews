@@ -25,14 +25,16 @@ def CitizenReport(request):
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
-        subject = request.POST['subject']
+        heading = request.POST['heading']
+        location = request.POST['location']
+        dateandtime = request.POST['dateandtime']
         description = request.POST['description']
 
-        instance = Report(name = name, email = email, phone = phone, subject = subject, description = description)
+        instance = Report(name = name, email = email, phone = phone, heading = heading, location = location, dateandtime = dateandtime, description = description)
         instance.save()
         print()
         print()
-        print(name,email,phone,subject,description)
+        print(name,email,phone,description)
         print()
         print()
 
