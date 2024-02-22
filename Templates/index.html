@@ -1,0 +1,606 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Hyper_Local News</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@100;600;800&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar start -->
+        <div class="container-fluid sticky-top px-0">
+            <div class="container-fluid topbar bg-dark d-none d-lg-block">
+                <div class="container px-0">
+                    <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+                        <div class="top-info flex-grow-0">
+                            <span class="rounded-circle btn-sm-square bg-primary me-2">
+                                <i class="fas fa-bolt text-white"></i>
+                            </span>
+                            <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+                                <p class="mb-0 text-white fs-6 fw-normal"></p>
+                            </div>
+                            <div class="overflow-hidden" style="width: 735px;">
+                                <div id="note" class="ps-2">
+                                    <a href="#"><p class="text-white mb-0 link-hover">Hyper local news</p></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-light">
+                <div class="container px-0">
+                    <nav class="navbar navbar-light navbar-expand-xl">
+                        <a href="index.html" class="navbar-brand mt-3">
+                            <p class="text-primary display-6 mb-2" style="line-height: 0;">Hyperlocal News</p>
+                            
+                        </a>
+                        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars text-primary"></span>
+                        </button>
+                        <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+                            <div class="navbar-nav mx-auto border-top">
+                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Locations</a>
+                                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                        <a href="#" class="dropdown-item"></a>
+                                        
+                                        <a href="Anekal.html" class="dropdown-item">Anekal</a>
+                                        <a href="banashankari.html" class="dropdown-item">Banashankari</a>
+                                        <a href="bellandur lake.html" class="dropdown-item">Bellanduru</a>
+                                        <a href="banneraghatta.html" class="dropdown-item">Banneraghatta</a>
+                                        <a href="bommanahalli.html" class="dropdown-item">Bommanahalli</a>
+                                        <a href="cubbon park.html" class="dropdown-item">Cubbon park</a>
+                                        <a href="kengeri.html" class="dropdown-item">Kengeri</a>
+                                        <a href="kormangla.html" class="dropdown-item">Koramangala</a>
+                                        <a href="nagasandra.html" class="dropdown-item">Nagasandra</a>
+                                        <a href="Yelahanka" class="dropdown-item">Yelahanka</a>
+                                    </div>
+                                </div>
+                                <a href="404.html" class="nav-item nav-link">CitizenInput</a>
+                                <a href="contact.html" class="nav-item nav-link">CitizenReport</a>
+                                <a href="footer.html" class="nav-item nav-link">ContactUs</a>
+                            </div>
+                            <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
+                                <div class="d-flex">
+                                    <img src="{% static 'img/weather-icon.png' %}" class="img-fluid w-100 me-2" alt="">
+                                    <div class="d-flex align-items-center">
+                                        <strong class="fs-4 text-secondary">31°C</strong>
+                                        <div class="d-flex flex-column ms-2" style="width: 150px;">
+                                            <span class="text-body">BENGALURU</span>
+                                            <small>Fri, 23feb 2024</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+        <!-- Single Product Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="mb-4">
+                            <h1><b>Hyperlocal News : Your neighborhood, in your hands</b></h1>
+                        </div>
+                        <div class="position-relative rounded overflow-hidden mb-3">
+                            <img src="https://i.kinja-img.com/image/upload/c_fill,h_900,q_60,w_1600/4bf3af6f41accf2a2c098bdbc5974ea6.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                            <div class="position-absolute text-white px-4 py-2 " style="top: 20px; right: 20px;">                                              
+                                
+                            </div>
+                        </div>
+                        
+                        <p class="my-4">
+                            Feeling disconnected from your community? Drowning in irrelevant news?<br>
+                            HyperLocal News tackles these issues head-on. Existing news outlets often neglect the stories that matter most to you, the ones happening right outside your door. They bombard you with national headlines and events that feel distant and impersonal. This lack of hyper-local news leaves you disconnected from your neighbors and uninformed about the issues impacting your daily life.
+
+
+                        </p>
+                        <p class="my-4">
+                            HyperLocal News aims to prevent unnecessary information overload. We believe everyone deserves to feel connected to their community and empowered to make informed decisions about their local environment.<br>
+                            We are developing a web application to address the lack of local news by sharing relevant content. The platform will have user interfaces to make it easy for residents to access information about community events, government updates and local projects .The platform will have user interfaces, push notifications, personalized content recommendations, and collaboration with news outlets, and government agencies. It will also include community forums for community engagement.<br>
+                            <ul>Real-time updates: Know what's happening around the corner, not just across town.</ul>
+                            <ul>Community powered: Share, discuss, and connect with your neighbors.</ul>
+                            <ul>Get the full picture: Diverse local news sources, right at your fingertips.</ul>
+                            <ul>Local voices amplified: Citizen journalists tell the stories that matter.</ul>
+                            <ul>Neighbors: Chat, share events, and build connections right outside your door.</ul>
+                            <ul>News-hungry locals: Dive deep into community stories, from hidden gems to pressing issues.</ul>
+                            <ul>Citizen journalists: Share your voice, amplify untold tales from your backyard.</ul>
+                            <ul>Local authorities: Stay connected to the community's heartbeat, pulse, and stories.</ul>
+                            
+
+                           
+                        </p>
+                        <h3>Upcoming Features:</h3>
+                        <div class="tab-class">
+                            <div class="d-flex justify-content-between border-bottom mb-4">
+                                <ul class="nav nav-pills d-inline-flex text-center">
+                                    <li class="nav-item mb-3">
+                                        <a class="d-flex py-2 bg-light rounded-pill active me-2" data-bs-toggle="pill" href="#tab-1">
+                                            <span class="text-dark" style="width: 100px;">MobileApp</span>
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="nav-item mb-3">
+                                        <a class="d-flex py-2 bg-light rounded-pill me-2" data-bs-toggle="pill" href="#tab-2">
+                                            <span class="text-dark" style="width: 100px;">Precision</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item mb-3">
+                                        <a class="d-flex py-2 bg-light rounded-pill me-2" data-bs-toggle="pill" href="#tab-3">
+                                            <span class="text-dark" style="width: 100px;">Notifications</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="d-flex align-items-center">
+                                    <h5 class="mb-0 me-3">Share:</h5>
+                                    <i class="fab fa-facebook-f link-hover btn btn-square rounded-circle border-primary text-dark me-2"></i>
+                                    <i class="btn fab bi-twitter link-hover btn btn-square rounded-circle border-primary text-dark me-2"></i>
+                                    <i class="btn fab fa-instagram link-hover btn btn-square rounded-circle border-primary text-dark me-2"></i>
+                                    <i class="btn fab fa-linkedin-in link-hover btn btn-square rounded-circle border-primary text-dark"></i>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane fade show active">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-3">
+                                            <img src="https://static.vecteezy.com/system/resources/thumbnails/012/866/513/small/mobile-app-icon-style-vector.jpg" class="img-fluid w-100 rounded" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>MobileApp</h3>
+                                            <p class="mb-0">We are set to implement this idea on a mobile application furthur down the line.The Mobile applicatin will have the same features and interface as that of the web application, if not better.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-pane fade show">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-3">
+                                            <img src="https://media.istockphoto.com/id/1314949803/vector/adjustment-the-target-precision-vector-linear-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=tYX04EhodcDZp9sScprmGYg9u9iNpd7CA-vBZvKrJ40=" class="img-fluid w-100 rounded" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>Accuracy</h3>
+                                            <p class="mb-0">Our mobile application will ensure unwavering precision in delivering information. With a meticulous approach to data collection and validation, we guarantee the utmost accuracy in every piece of content presented
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-3" class="tab-pane fade show">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-3">
+                                            <img src="https://static.vecteezy.com/system/resources/thumbnails/001/505/138/small/notification-bell-icon-free-vector.jpg" alt="">
+                                        </div>
+                                        <div class="col-9">
+                                            <h3>Notification</h3>
+                                            <p class="mb-0">For better and real time local awareness we will have a notification feature on our mobile app. This will keep the users better informed in an interactive way.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light rounded p-4">
+                            <h2 class="mb-4">Citizen's Chronicle</h2>
+                            <div class="p-4 bg-white rounded mb-4">
+                                <div class="row g-4">
+                                    <div class="col-3">
+                                        <img src="{% static 'img/footer-4.jpg' %}" class="img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>James Boreego</h5>
+                                            <a href="#" class="link-hover text-body fs-6"><i class="fas fa-long-arrow-alt-right me-1"></i> Reply</a>
+                                        </div>
+                                        <small class="text-body d-block mb-3"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white rounded mb-4">
+                                <div class="row g-4">
+                                    <div class="col-3">
+                                        <img src="{% static 'img/footer-4.jpg' %}" class="img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>James Boreego</h5>
+                                            <a href="#" class="link-hover text-body fs-6"><i class="fas fa-long-arrow-alt-right me-1"></i> Reply</a>
+                                        </div>
+                                        <small class="text-body d-block mb-3"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-white rounded mb-0">
+                                <div class="row g-4">
+                                    <div class="col-3">
+                                        <img src="{% static 'img/footer-4.jpg' %}" class="img-fluid rounded-circle w-100" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>James Boreego</h5>
+                                            <a href="#" class="link-hover text-body fs-6"><i class="fas fa-long-arrow-alt-right me-1"></i> Reply</a>
+                                        </div>
+                                        <small class="text-body d-block mb-3"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="p-3 rounded border">
+                                    
+                                    <h3 class="mb-4">Local Zones</h3>
+                                    <div class="row g-2">
+                                        <div class="col-12">
+                                            <a href="Anekal.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Anekal
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="banashankari.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Banashankari
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="banneraghatta.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Banneraghatta
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="bellandur lake.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Bellanduru
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="bommanahalli.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Bommanahalli
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="cubbon park.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Cubbon park
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="kengeri.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Kengeri
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="kormangla.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Koramangala
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="nagasandra.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
+                                                Nagasandra
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <a href="yelahanka.html" class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3 mb-4">
+                                                Yelahanka
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h4 class="my-4">Stay Connected</h4>
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            <a href="#" class="w-100 rounded btn btn-primary d-flex align-items-center p-3 mb-2">
+                                                <i class="fab fa-facebook-f btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">13,977 Fans</span>
+                                            </a>
+                                            <a href="#" class="w-100 rounded btn btn-danger d-flex align-items-center p-3 mb-2">
+                                                <i class="fab fa-twitter btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">21,798 Follower</span>
+                                            </a>
+                                            <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-2">
+                                                <i class="fab fa-youtube btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">7,999 Subscriber</span>
+                                            </a>
+                                            <a href="#" class="w-100 rounded btn btn-dark d-flex align-items-center p-3 mb-2">
+                                                <i class="fab fa-instagram btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">19,764 Follower</span>
+                                            </a>
+                                            <a href="#" class="w-100 rounded btn btn-secondary d-flex align-items-center p-3 mb-2">
+                                                <i class="bi-cloud btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">31,999 Subscriber</span>
+                                            </a>
+                                            <a href="#" class="w-100 rounded btn btn-warning d-flex align-items-center p-3 mb-4">
+                                                <i class="fab fa-dribbble btn btn-light btn-square rounded-circle me-3"></i>
+                                                <span class="text-white">37,999 Subscriber</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h4 class="my-4">Popular News</h4>
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="{% static 'img/features-sports-1.jpg' %}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Sports</p>
+                                                        <a href="#" class="h6">
+                                                            Get the best speak market, news.
+                                                        </a>
+                                                        <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="{% static 'img/features-technology.jpg' %}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Technology</p>
+                                                        <a href="#" class="h6">
+                                                            Get the best speak market, news.
+                                                        </a>
+                                                        <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="{% static 'img/features-fashion.jpg' %}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Fashion</p>
+                                                        <a href="#" class="h6">
+                                                            Get the best speak market, news.
+                                                        </a>
+                                                        <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="{% static 'img/features-life-style.jpg' %}" class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Life Style</p>
+                                                        <a href="#" class="h6">
+                                                            Get the best speak market, news.
+                                                        </a>
+                                                        <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9, 2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="position-relative banner-2">
+                                                <img src="{% static 'img/news-1.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="position-relative banner-2">
+                                                <img src="{% static 'img/news-5.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Product End -->
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark footer py-10">
+            <div class="container py-5">
+                <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="row g-4">
+                        <div class="col-lg-20">
+                            <a href="#" class="d-flex flex-column flex-wrap">
+                                <p class="text-white mb-0 display-6">HyperLocal News Bengaluru</p>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-5 col-xl-5">
+                        <div class="footer-item-1">
+                            <h4 class="mb-4 text-white">Get In Touch</h4>
+                            <p class="text-secondary line-h">Address: <span class="text-white">Dayananda Sagar Academy Of Technology and Management, Kanakapura Road</span></p>
+                            <p class="text-secondary line-h">Email: <span class="text-white">hyperlocal_news@gmail.com</span></p>
+                            <p class="text-secondary line-h">Phone: <span class="text-white">+0123 4567 8910</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="d-flex flex-column text-start footer-item-3">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                            <a class="btn-link text-white" href="index.html"><i class="fas fa-angle-right text-white me-2"></i> Home</a>
+                            <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Citizen Input</a>
+                            <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Citizen Report</a>
+                            <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Contact Us</a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="footer-item-4">
+                            <h4 class="mb-4 text-white">Our Gallary</h4>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,q_auto,w_720/648550e5648956001c228416.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                                    </div>
+                               </div>
+                               <div class="col-4">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="https://www.tripiwiki.com/images/places/uploads/Bangalore-Palace-and-Grounds15800.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="https://bengaluruprayana.com/wp-content/uploads/2023/02/Cubbon-Park.jpeg" class="img-zoomin img-fluid rounded w-100" alt="">
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="https://www.revv.co.in/blogs/wp-content/uploads/2020/04/place-to.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="rounded overflow-hidden">
+                                        <img src="https://static.toiimg.com/photo/66782794.cms" class="img-zoomin img-fluid rounded w-100" alt="">
+                                    </div>
+                               </div>
+                                                             
+                               <div class="col-4">
+                                <div class="rounded overflow-hidden">
+                                    <img src="https://images.deccanherald.com/deccanherald/import/sites/dh/files/article_images/2015/09/24/502529.gif?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true" class="img-zoomin img-fluid rounded w-100" alt="">
+                                </div>
+                           </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                            <p><br></p>
+                               <h3 class="mb-4 text-white"><br>Share:&nbsp;&nbsp;</h3>
+                               <i class="fab fa-facebook-f link-hover btn btn-square rounded-circle border-primary text-white me-2" ></i>
+                               <i class="btn fab bi-twitter link-hover btn btn-square rounded-circle border-primary text-white me-2"></i>
+                               <i class="btn fab fa-instagram link-hover btn btn-square rounded-circle border-primary text-white me-2"></i>
+                               <i class="btn fab fa-linkedin-in link-hover btn btn-square rounded-circle border-primary text-white"></i>
+                               
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Hyperlocal News</a>, All right reserved.</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-2 border-white rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+
+</html>
