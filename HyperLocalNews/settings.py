@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-75$fd4)%u&$3s3(l73p@u%9)j%8$_#nkq0_$9^hj-5q2y)p120'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -130,6 +130,4 @@ STATICFILES_DIRS =[
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 #Activate Django-Heroku
-django_heroku.settings(locals())
