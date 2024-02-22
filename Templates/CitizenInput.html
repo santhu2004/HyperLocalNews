@@ -109,78 +109,78 @@
 
     <!-- Navbar start -->
     <div class="container-fluid sticky-top px-0">
-        <div class="container-fluid topbar bg-dark d-none d-lg-block">
-            <div class="container px-0">
-                <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
-                    <div class="top-info flex-grow-0">
-                        <span class="rounded-circle btn-sm-square bg-primary me-2">
-                            <i class="fas fa-bolt text-white"></i>
-                        </span>
-                        <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
-                            <p class="mb-0 text-white fs-6 fw-normal"></p>
-                        </div>
-                        <div class="overflow-hidden" style="width: 735px;">
-                            <div id="note" class="ps-2">
-                                <a href="#"><p class="text-white mb-0 link-hover">Hyper local news</p></a>
+            <div class="container-fluid topbar bg-dark d-none d-lg-block">
+                <div class="container px-0">
+                    <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+                        <div class="top-info flex-grow-0">
+                            <span class="rounded-circle btn-sm-square bg-primary me-2">
+                                <i class="fas fa-bolt text-white"></i>
+                            </span>
+                            <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+                                <p class="mb-0 text-white fs-6 fw-normal"></p>
+                            </div>
+                            <div class="overflow-hidden" style="width: 735px;">
+                                <div id="note" class="ps-2">
+                                    <a href="/"><p class="text-white mb-0 link-hover">Beyond the Headlines, Beyond Ignorance</p></a>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
-                    
+                </div>
+            </div>
+            <div class="container-fluid bg-light">
+                <div class="container px-0">
+                    <nav class="navbar navbar-light navbar-expand-xl">
+                        <a href="/" class="navbar-brand mt-3">
+                            <p class="text-primary display-6 mb-2" style="line-height: 0;">Hyperlocal News</p>
+                            
+                        </a>
+                        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars text-primary"></span>
+                        </button>
+                        <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+                            <div class="navbar-nav mx-auto border-top">
+                                <a href="/" class="nav-item nav-link">Home</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Locations</a>
+                                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                        <a href="#" class="dropdown-item"></a>
+                                        
+                                        <a href="Anekal" class="dropdown-item">Anekal</a>
+                                        <a href="Banashankari" class="dropdown-item">Banashankari</a>
+                                        <a href="Bellandur_Lake" class="dropdown-item">Bellanduru</a>
+                                        <a href="Banneraghatta" class="dropdown-item">Banneraghatta</a>
+                                        <a href="Bommanahalli" class="dropdown-item">Bommanahalli</a>
+                                        <a href="Cubbon_Park" class="dropdown-item">Cubbon park</a>
+                                        <a href="Kengeri" class="dropdown-item">Kengeri</a>
+                                        <a href="Kormangla" class="dropdown-item">Koramangala</a>
+                                        <a href="Nagasandra" class="dropdown-item">Nagasandra</a>
+                                        <a href="Yelahanka" class="dropdown-item">Yelahanka</a>
+                                    </div>
+                                </div>
+                                <a href="CitizenInput" class="nav-item nav-link">CitizenInput</a>
+                                <a href="CitizenReport" class="nav-item nav-link">CitizenReport</a>
+                                <a href="Contact_Us" class="nav-item nav-link">ContactUs</a>
+                            </div>
+                            <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
+                                <div class="d-flex">
+                                    <img src="{% static 'img/weather-icon.png' %}" class="img-fluid w-100 me-2" alt="">
+                                    <div class="d-flex align-items-center">
+                                        <strong class="fs-4 text-secondary">31°C</strong>
+                                        <div class="d-flex flex-column ms-2" style="width: 150px;">
+                                            <span class="text-body">BENGALURU</span>
+                                            <small>Fri, 23feb 2024</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
-        <div class="container-fluid bg-light">
-            <div class="container px-0">
-                <nav class="navbar navbar-light navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand mt-3">
-                        <p class="text-primary display-6 mb-2" style="line-height: 0;">Hyperlocal News</p>
-                        
-                    </a>
-                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars text-primary"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto border-top">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Locations</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="#" class="dropdown-item"></a>
-                                    
-                                    <a href="Anekal.html" class="dropdown-item">Anekal</a>
-                                    <a href="banashankari.html" class="dropdown-item">Banashankari</a>
-                                    <a href="bellandur lake.html" class="dropdown-item">Bellanduru</a>
-                                    <a href="banneraghatta.html" class="dropdown-item">Banneraghatta</a>
-                                    <a href="bommanahalli.html" class="dropdown-item">Bommanahalli</a>
-                                    <a href="cubbon park.html" class="dropdown-item">Cubbon park</a>
-                                    <a href="kengeri.html" class="dropdown-item">Kengeri</a>
-                                    <a href="kormangla.html" class="dropdown-item">Koramangala</a>
-                                    <a href="nagasandra.html" class="dropdown-item">Nagasandra</a>
-                                    <a href="yelahanka.html" class="dropdown-item">Yelahanka</a>
-                                </div>
-                            </div>
-                            <a href="input_pg.html" class="nav-item nav-link active">CitizenInput</a>
-                            <a href="report.html" class="nav-item nav-link">CitizenReport</a>
-                            <a href="contact_us.html" class="nav-item nav-link">ContactUs</a>
-                        </div>
-                        <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
-                            <div class="d-flex">
-                                <img src="{% static 'img/weather-icon.png' %}" class="img-fluid w-100 me-2" alt="">
-                                <div class="d-flex align-items-center">
-                                    <strong class="fs-4 text-secondary">31°C</strong>
-                                    <div class="d-flex flex-column ms-2" style="width: 150px;">
-                                        <span class="text-body">BENGALURU</span>
-                                        <small>Fri, 23feb 2024</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
     <!-- Navbar End -->
 
 
@@ -231,7 +231,7 @@
                 <div class="row g-4">
                     <div class="col-lg-20">
                         <a href="#" class="d-flex flex-column flex-wrap">
-                            <p class="text-white mb-0 display-6">HyperLocal News Bengaluru</p>
+                            <p class="text-white mb-0 display-6">HyperLocal News </p>
                         </a>
                     </div>
                     
@@ -241,8 +241,10 @@
                 <div class="col-lg-5 col-xl-5">
                     <div class="footer-item-1">
                         <h4 class="mb-4 text-white">Get In Touch</h4>
-                        <p class="text-secondary line-h">Address: <span class="text-white">Dayananda Sagar Academy Of Technology and Management, Kanakapura Road</span></p>
-                        <p class="text-secondary line-h">Email: <span class="text-white">hyperlocal_news@gmail.com</span></p>
+                        <a  href="https://www.google.com/maps/place/Dayananda+Sagar+Academy+of+Technology+and+Management+(DSATM)/@12.8251583,77.5140301,15z/data=!4m6!3m5!1s0x3bae41057dd66abf:0xfda823a3ca1775ea!8m2!3d12.8251583!4d77.5140301!16s%2Fg%2F11f70_6z11?entry=ttu"         
+                        <p class="text-secondary line-h">Address: <span class="text-white">Dayananda Sagar Academy Of Technology and Management, Kanakapura Road</span></p></a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxGzVcmSpMnwCGrPGWBTFLCPhFHZrWGRrDlJsLMVSfcVvbjWJzRRzChjFFrCgKkGPnQHQb"
+                        <p class="text-secondary line-h">Email: <span class="text-white">hyperlocalnews5@gmail.com</span></p></a>
                         <p class="text-secondary line-h">Phone: <span class="text-white">+0123 4567 8910</span></p>
                     </div>
                 </div>
@@ -250,10 +252,10 @@
                 <div class="col-lg-6 col-xl-3">
                     <div class="d-flex flex-column text-start footer-item-3">
                         <h4 class="mb-4 text-white">Quick Links</h4>
-                        <a class="btn-link text-white" href="index.html"><i class="fas fa-angle-right text-white me-2"></i> Home</a>
-                        <a class="btn-link text-white" href="input_pg.html"><i class="fas fa-angle-right text-white me-2"></i> Citizen Input</a>
-                        <a class="btn-link text-white" href="report.html"><i class="fas fa-angle-right text-white me-2"></i> Citizen Report</a>
-                        <a class="btn-link text-white" href="contact_us.html"><i class="fas fa-angle-right text-white me-2"></i> Contact Us</a>
+                        <a class="btn-link text-white" href="/"><i class="fas fa-angle-right text-white me-2"></i> Home</a>
+                        <a class="btn-link text-white" href="CitizenInput"><i class="fas fa-angle-right text-white me-2"></i> Citizen Input</a>
+                        <a class="btn-link text-white" href="CitizenReport"><i class="fas fa-angle-right text-white me-2"></i> Citizen Report</a>
+                        <a class="btn-link text-white" href="Contact_Us"><i class="fas fa-angle-right text-white me-2"></i> Contact Us</a>
 
                     </div>
                 </div>
@@ -295,12 +297,15 @@
                         </div>
                         <div class="d-flex align-items-center">
                         <p><br></p>
-                           <h3 class="mb-4 text-white"><br>Share:&nbsp;&nbsp;</h3>
-                           <i class="fab fa-facebook-f link-hover btn btn-square rounded-circle border-primary text-white me-2" ></i>
-                           <i class="btn fab bi-twitter link-hover btn btn-square rounded-circle border-primary text-white me-2"></i>
-                           <i class="btn fab fa-instagram link-hover btn btn-square rounded-circle border-primary text-white me-2"></i>
-                           <i class="btn fab fa-linkedin-in link-hover btn btn-square rounded-circle border-primary text-white"></i>
-                           
+                           <h3 class="mb-4 text-white"><br>Follow:&nbsp;&nbsp;</h3>
+                           <a href=""
+                           <i class="fab fa-facebook-f link-hover btn btn-square rounded-circle border-primary text-white me-2" ></i></a>
+                           <a href="https://twitter.com/NewsHyperlocal?t=0bZVwKL3QQcZicVqAvPXAg&s=08"
+                           <i class="btn fab bi-x link-hover btn btn-square rounded-circle border-primary text-white me-2"></i></a>
+                           <a href="https://www.instagram.com/hyperlocal_news/"
+                           <i class="btn fab fa-instagram link-hover btn btn-square rounded-circle border-primary text-white me-2"></i></a>
+                           <a href="https://www.linkedin.com/company/hyperlocal-news/?viewAsMember=true "
+                           <i class="btn fab fa-linkedin-in link-hover btn btn-square rounded-circle border-primary text-white"></i></a>
 
                         </div>
                     </div>
