@@ -9,14 +9,9 @@ import random
 
 def home(request):
     return render(request,'index.html')
-
-def data(request):
-    items = Report.objects.all()
-    return render(request, 'database.html',{'data' : items})
-
 def CitizenInput(request):
     items = Report.objects.all()
-    return render(request, 'CitizenInput.html')
+    return render(request, 'CitizenInput.html',{'data' : items})
 def Contact_Us(request):
     items = Report.objects.all()
     return render(request, 'Contact_Us.html')
@@ -32,11 +27,8 @@ def CitizenReport(request):
 
         instance = Report(name = name, email = email, phone = phone, heading = heading, location = location, dateandtime = dateandtime, description = description)
         instance.save()
-        print()
-        print()
-        print(name,email,phone,description)
-        print()
-        print()
+
+        # print(name,email,phone,description,)
 
     return render(request,'CitizenReport.html')
 

@@ -5,8 +5,7 @@ from Home import views
 urlpatterns = [
     path('', views.home, name="Home"),
     path('CitizenReport', views.CitizenReport, name="Citizen"),
-    path('db',views.data, name = 'database'),
-    path('CitizenInput',views.CitizenInput, name = 'input_pg'),
+    path('CitizenInput',views.CitizenInput, name = 'CitizenInput'),
     path('Contact_Us',views.Contact_Us, name = 'Contact_Us'),
 
     path('Anekal',views.Anekal, name = 'Anekal'),
