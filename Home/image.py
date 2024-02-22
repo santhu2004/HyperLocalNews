@@ -1,54 +1,52 @@
+import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-import time
+import random
 
-def scraped_news(url):
+def scrape_image_urls(url):
     try:
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-gpu")
-        driver = webdriver.Chrome(options=chrome_options)
+        # Fetch the webpage
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an HTTPError for bad responses
 
-        driver.get(url)
-        wait = WebDriverWait(driver, 10)
+        # Parse the HTML content
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-        for _ in range(5):
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div.uwU81')))
+        # Extract and store image URLs in a list
+        articles = soup.find_all('div', class_='uwU81')  # Adjust the class based on the website's structure
 
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-            image_urls = extract_image_urls(soup)
+        image_urls = []
+        for article in articles:
+            image = article.find('img')  # Adjust the class accordingly
 
-            for image_url in image_urls:
-                yield image_url
+            # Check both 'src' and 'data-src' attributes for the image URL
+            if image:
+                for attr in ['src', 'data-src']:
+                    if attr in image.attrs and image[attr].endswith(('.jpg', '.jpeg', '.png')):
+                        if image[attr] == "https://static.toiimg.com/thumb/imgsize-123456,msid-78553754,width-300,resizemode-4/78553754.jpg":
+                            # Replace with a random placeholder image URL
+                            placeholder_images = [ 'https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_640.jpg',
+        'https://thumbs.dreamstime.com/b/news-woodn-dice-depicting-letters-bundle-small-newspapers-leaning-left-dice-34802664.jpg',
+        'https://cdn.create.vista.com/api/media/small/5394402/stock-photo-newspapers',
+        'https://images.freeimages.com/images/large-previews/daf/newspaper-1516622.jpg?fmt=webp&w=500',
+        'https://thumbs.dreamstime.com/b/local-news-25068677.jpg','https://www.shutterstock.com/image-photo/man-reading-newspaper-headline-local-260nw-594183902.jpg'
+                                
+                            ]
+                            image_urls.append(random.choice(placeholder_images))
+                        else:
+                            image_urls.append(image[attr])
+                        break
 
-            time.sleep(2)
+        return image_urls
 
-    finally:
-        driver.quit()
-
-def extract_image_urls(soup):
-    articles = soup.find_all('div', class_='uwU81')
-
-    for article in articles:
-        image = article.find('img')
-
-        if image:
-            for attr in ['src', 'data-src']:
-                if attr in image.attrs and image[attr].endswith(('.jpg', '.jpeg', '.png')):
-                    image_url = image[attr]
-                    yield image_url
+    except requests.RequestException as e:
+        print(f"Failed to retrieve the webpage. Error: {e}")
+        return None
 
 # Example usage:
-if __name__ == "__main__":
+if __name__ == "_main_":
     url_to_scrape = "https://timesofindia.indiatimes.com/topic/yelahanka"
+    image_urls = scrape_image_urls(url_to_scrape)
 
-    # Access image URLs one by one
-    for url in scraped_news(url_to_scrape):
-        print(f"Processing image URL: {url}")
-
-        # Add your code here to use the image URL as needed
+    if image_urls:
+        for url in image_urls:
+            print(f"Image URL: {url}")

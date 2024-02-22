@@ -36,7 +36,7 @@ def scrape_news(url):
 
 # Example usage:
 if __name__ == "__main__":
-    url_to_scrape = "https://timesofindia.indiatimes.com/topic/yelahanka"
+    url_to_scrape = "https://timesofindia.indiatimes.com/topic/anekal"
     scraped_headings = scrape_news(url_to_scrape)
 
     # Display the number of headings

@@ -14,6 +14,4 @@ urlpatterns = [
     # path('', views.about, name="about"),
     # path('contact', views.contact, name="contact"),
     # path('Home', views.Home, name="contact")
-    
-
 ]
